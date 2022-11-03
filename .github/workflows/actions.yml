@@ -24,7 +24,10 @@ jobs:
           
       - name: execute py script # run main.py
         env:
-          CFBD_SECRET: ${{ secrets.CFBD_SECRET }}
+          TWITTER_CK: ${{ secrets.TWITTER_CK }}
+          TWITTER_CS: ${{ secrets.TWITTER_CS }}
+          TWITTER_T: ${{ secrets.TWITTER_T }}
+          TWITTER_TS: ${{ secrets.TWITTER_TS }}
         run: python main.py
         
       - name: commit files
