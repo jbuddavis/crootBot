@@ -1,8 +1,6 @@
 name: run main.py
 
-on:
-  schedule:
-    - cron: '0 12 * * *' # At 00:00 on Monday
+on: [push]
 
 jobs:
   build:
@@ -28,7 +26,7 @@ jobs:
           TWITTER_CS: ${{ secrets.TWITTER_CS }}
           TWITTER_T: ${{ secrets.TWITTER_T }}
           TWITTER_TS: ${{ secrets.TWITTER_TS }}
-        run: python main.py
+        run: python post_tweet.py
         
       - name: commit files
         run: |
