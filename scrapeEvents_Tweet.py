@@ -18,7 +18,7 @@ except KeyError:
 def updateEvents():
     # Read in old Events
     dfPositions = pd.read_csv('positions.csv')
-    dfOldEvents = pd.read_csv('events_old.csv')
+    dfOldEvents = pd.read_csv('events_old.csv',index=False)
     oldEvents = list(dfOldEvents.Key.unique()) # old events to list
     
     # Read new events
