@@ -32,17 +32,17 @@ def main():
             )
     api = tweepy.API(auth)
  
-    tweet = "🚨New #Gators 247 Crystal Ball🚨
-         Recruit Info
-        🐊Cormani McClain (2023)
-        📈⭐️⭐️⭐️⭐️⭐️(Rk #2)
-        🏈CB; 6-2; 165
-        🏡Lakeland, FL
-        🏫Lakeland
-        Crystal Ball Info
-        ✍️RCorySmith
-        🎚️Confidence: 8
-        https://247sports.com/Player/46109958"
+    tweet = "🚨New #Gators 247 Crystal Ball🚨\n
+    Recruit Info\n
+    🐊Cormani McClain (2023)\n
+    📈⭐️⭐️⭐️⭐️⭐️(Rk #2)\n
+    🏈CB; 6-2; 165\n
+    🏡Lakeland, FL\n
+    🏫Lakeland\n
+    Crystal Ball Info\n
+    ✍️RCorySmith\n
+    🎚️Confidence: 8\n
+    https://247sports.com/Player/46109958"
     status = api.update_status(status=tweet)
  
 if __name__ == "__main__":
