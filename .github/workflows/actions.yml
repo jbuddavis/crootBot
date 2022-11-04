@@ -1,8 +1,6 @@
 name: run main.py
 
-on:
-  schedule:
-    - cron: '*/30 * * * *' # Every 30 minutes
+on: [push]
 
 jobs:
   build:
@@ -29,6 +27,7 @@ jobs:
           TWITTER_T: ${{ secrets.TWITTER_T }}
           TWITTER_TS: ${{ secrets.TWITTER_TS }}
         run: python scrapeCBs_Tweet.py
+        run: python scrapeEvents_Tweet.py
         
       - name: commit files
         run: |
