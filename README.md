@@ -1,3 +1,1 @@
-# Post to bud's bot account
-
-test9
+# This bot checks for recruit predictions and then tweets them out
