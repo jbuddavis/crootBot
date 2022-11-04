@@ -1,6 +1,8 @@
 name: run main.py
 
-on: [push]
+on:
+  schedule:
+    - cron: '*/30 * * * *' # Run every 30 minutes
 
 jobs:
   build:
