@@ -26,8 +26,9 @@ jobs:
           TWITTER_CS: ${{ secrets.TWITTER_CS }}
           TWITTER_T: ${{ secrets.TWITTER_T }}
           TWITTER_TS: ${{ secrets.TWITTER_TS }}
-        run: python scrapeCBs_Tweet.py
-        run: python scrapeEvents_Tweet.py
+        run: |
+          python scrapeCBs_Tweet.py
+          python scrapeEvents_Tweet.py
         
       - name: commit files
         run: |
