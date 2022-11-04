@@ -18,7 +18,7 @@ except KeyError:
 def updateEvents():
     # Read in old Events
     dfPositions = pd.read_csv('positions.csv')
-    dfOldEvents = pd.read_csv('events_old.csv',index=False)
+    dfOldEvents = pd.read_csv('events_old.csv')
     oldEvents = list(dfOldEvents.Key.unique()) # old events to list
     
     # Read new events
@@ -28,7 +28,7 @@ def updateEvents():
     newEvents = dfNewEvents[~dfNewEvents['Key'].isin(oldEvents)]
     
     if len(newEvents)>0:
-        dfNewEvents.to_csv('events_old.csv')
+        dfNewEvents.to_csv('events_old.csv',index=False)
         newEvents.reset_index(inplace=True,drop=True)
         for i in range(0,len(newEvents)):
             Name,Year,Stars,Rank,PosKey,Pos,HT,WT,City,State,HS,Link = getRecruitmentInfo(newEvents.loc[i,'Recruitment'])
