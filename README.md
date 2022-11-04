@@ -1,1 +1,3 @@
-# This bot checks for recruit predictions and then tweets them out
+# Nothing to see here
+
+move along
