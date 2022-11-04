@@ -30,6 +30,7 @@ def updateEvents():
     if len(newEvents)>0:
         dfNewEvents.to_csv('events_old.csv',index=False)
         newEvents.reset_index(inplace=True,drop=True)
+        print('New Events Detected')
         for i in range(0,len(newEvents)):
             Name,Year,Stars,Rank,PosKey,Pos,HT,WT,City,State,HS,Link = getRecruitmentInfo(newEvents.loc[i,'Recruitment'])
             Sport = dfPositions[dfPositions['Key']==PosKey]['Sport'].item()
@@ -39,7 +40,7 @@ def updateEvents():
             else:
                 tweetCommitment(Name,Year,Stars,Rank,Sport,Pos,HT,WT,City,State,HS,Link)
     else:
-        print('no new events')
+        print('No New Events')
 
 def getEvents():
     url = 'https://247sports.com/college/florida/Institution/24099/RecruitInterestEvents.json?OrderBy=Date%3ADESC'
