@@ -26,7 +26,7 @@ jobs:
           TWITTER_CS: ${{ secrets.TWITTER_CS }}
           TWITTER_T: ${{ secrets.TWITTER_T }}
           TWITTER_TS: ${{ secrets.TWITTER_TS }}
-        run: python post_tweet.py
+        run: python main.py
         
       - name: commit files
         run: |
