@@ -28,7 +28,7 @@ def updateCBs(year,instId):
     
     if newUpdate > lastUpdate:
         print('NEW CBs for '+str(year)+' - '+str(instId))
-        # dfNewCBs.to_csv('CB_'+str(year)+'_'+str(instId)+'_old.csv')
+        dfNewCBs.to_csv('CB_'+str(year)+'_'+str(instId)+'_old.csv',index=False)
         dfNewCBs = dfNewCBs[dfNewCBs['UpdatedOn']>lastUpdate]
         dfNewCBs.reset_index(inplace=True,drop=True)
         for i in range(0,len(dfNewCBs)):
@@ -109,13 +109,13 @@ def tweetIt(name,year,stars,rank,pos,ht,wt,hometown,hs,user,conf,link):
     else:
         star_str = '⭐️⭐️'  
     tweet = "🚨New #Gators 247 Crystal Ball🚨\n\nRecruit Info\n🐊"+name+" ("+str(year)+")\n📈"+star_str+"(Rk #"+str(rank)+")\n🏈"+pos+"; "+str(ht)+"; "+str(wt)+"\n🏡"+hometown+"\n🏫"+hs+"\n\nCrystal Ball Info\n ✍️"+user+"\n🎚️Confidence: "+str(conf)+"\n\n🔗"+link
-    print(tweet)
-    # status = api.update_status(status=tweet)
+    # print(tweet)
+    status = api.update_status(status=tweet)
 
 if __name__ == "__main__":
     dfStates = pd.read_csv('states.csv')
     updateCBs(2023,24099)
-    # updateCBs(2024,24099)
+    updateCBs(2024,24099)
     
 
 
