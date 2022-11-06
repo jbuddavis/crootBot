@@ -31,6 +31,7 @@ jobs:
         run: |
           python scrapeCBs_Tweet.py
           python scrapeEvents_Tweet.py
+          python scrapeOffers_Tweet.py
         
       - name: commit files
         run: |
