@@ -17,8 +17,8 @@ except KeyError:
 
 def updateEvents():
     # Read in old Events
-    dfPositions = pd.read_csv('/data/positions.csv')
-    dfOldEvents = pd.read_csv('/data/events_old.csv')
+    dfPositions = pd.read_csv('data/positions.csv')
+    dfOldEvents = pd.read_csv('data/events_old.csv')
     oldEvents = list(dfOldEvents.Key.unique()) # old events to list
     
     # Read new events
@@ -28,7 +28,7 @@ def updateEvents():
     newEvents = dfNewEvents[~dfNewEvents['Key'].isin(oldEvents)]
     
     if len(newEvents)>0:
-        dfNewEvents.to_csv('/data/events_old.csv',index=False)
+        dfNewEvents.to_csv('data/events_old.csv',index=False)
         newEvents.reset_index(inplace=True,drop=True)
         print('New Events Detected')
         for i in range(0,len(newEvents)):
@@ -149,7 +149,7 @@ def tweetCommitment(Name,Year,Stars,Rank,Sport,Pos,HT,WT,City,State,HS,Link):
     status = api.update_status(status=tweet)
 
 if __name__ == "__main__":
-    dfStates = pd.read_csv('/data/states.csv')
+    dfStates = pd.read_csv('data/states.csv')
     updateEvents()
     
 
