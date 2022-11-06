@@ -17,7 +17,7 @@ except KeyError:
 
 def updateCBs(year,instId):
     # Read in old Crystal Balls
-    dfOldCBs = pd.read_csv('CB_'+str(year)+'_'+str(instId)+'_old.csv')
+    dfOldCBs = pd.read_csv('data/CB_'+str(year)+'_'+str(instId)+'_old.csv')
     dfOldCBs['UpdatedOn'] = pd.to_datetime(dfOldCBs['UpdatedOn'])
     lastUpdate = dfOldCBs.UpdatedOn.max() # get last update
     
@@ -28,7 +28,7 @@ def updateCBs(year,instId):
     
     if newUpdate > lastUpdate:
         print('NEW CBs for '+str(year)+' - '+str(instId))
-        dfNewCBs.to_csv('CB_'+str(year)+'_'+str(instId)+'_old.csv',index=False)
+        dfNewCBs.to_csv('data/CB_'+str(year)+'_'+str(instId)+'_old.csv',index=False)
         dfNewCBs = dfNewCBs[dfNewCBs['UpdatedOn']>lastUpdate]
         dfNewCBs.reset_index(inplace=True,drop=True)
         for i in range(0,len(dfNewCBs)):
@@ -113,7 +113,7 @@ def tweetIt(name,year,stars,rank,pos,ht,wt,hometown,hs,user,conf,link):
     status = api.update_status(status=tweet)
 
 if __name__ == "__main__":
-    dfStates = pd.read_csv('states.csv')
+    dfStates = pd.read_csv('data/states.csv')
     updateCBs(2023,24099)
     updateCBs(2024,24099)
     
