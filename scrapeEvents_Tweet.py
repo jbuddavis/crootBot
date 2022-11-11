@@ -38,7 +38,7 @@ def updateEvents():
             if newEvents.loc[i,'Type'] == 'OfficialVisit':
                 tweetOV(Name,Year,Stars,Rank,Sport,Pos,HT,WT,City,State,HS,Date,Link)
             else:
-                tweetCommitment(Name,Year,Stars,Rank,Sport,Pos,HT,WT,City,State,HS,Link)
+                continue
     else:
         print('No New Events')
 
@@ -112,41 +112,6 @@ def tweetOV(Name,Year,Stars,Rank,Sport,Pos,HT,WT,City,State,HS,Date,Link):
     # print(tweet)
     status = api.update_status(status=tweet)
 
-def tweetCommitment(Name,Year,Stars,Rank,Sport,Pos,HT,WT,City,State,HS,Link):
-    twitter_auth_keys = {
-        "consumer_key"        : twitter_ck,
-        "consumer_secret"     : twitter_cs,
-        "access_token"        : twitter_t,
-        "access_token_secret" : twitter_ts
-    }
- 
-    auth = tweepy.OAuthHandler(
-            twitter_auth_keys['consumer_key'],
-            twitter_auth_keys['consumer_secret']
-            )
-    auth.set_access_token(
-            twitter_auth_keys['access_token'],
-            twitter_auth_keys['access_token_secret']
-            )
-    api = tweepy.API(auth)
-    if Stars == 5:
-        star_str = '⭐️⭐️⭐️⭐️⭐️'
-    elif Stars ==4:
-        star_str = '⭐️⭐️⭐️⭐️'
-    elif Stars == 3:
-        star_str = '⭐️⭐️⭐️'   
-    else:
-        star_str = '⭐️⭐️' 
-        
-    if Sport == 1:
-        sport_str = '🏈'
-    elif Sport ==2:
-        sport_str = '🏀'
-    elif Sport == 3:
-        sport_str = '⚾️' 
-    tweet = "🚨New #Gators Commitment🚨\n\nRecruit Info\n🐊"+Name+" ("+str(Year)+")\n📈"+star_str+"(Rk #"+str(Rank)+")\n"+sport_str+Pos+"; "+str(HT)+"; "+str(WT)+"\n🏡"+City+', '+State+"\n🏫"+HS+"\n\n🔗"+Link
-    # print(tweet)
-    status = api.update_status(status=tweet)
 
 if __name__ == "__main__":
     dfStates = pd.read_csv('data/states.csv')
