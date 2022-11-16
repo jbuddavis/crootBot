@@ -31,11 +31,11 @@ jobs:
           TWITTER_T: ${{ secrets.TWITTER_T }}
           TWITTER_TS: ${{ secrets.TWITTER_TS }}
         run: |
-          #python scrapeCBs_Tweet.py
-          #python scrapeEvents_Tweet.py
-          #python scrapeCommits_Tweet.py
-          pythong scrapeFuturecast_Tweet.py
-          #python scrapeOffers_Tweet.py
+          # python scrapeCBs_Tweet.py
+          # python scrapeEvents_Tweet.py
+          # python scrapeCommits_Tweet.py
+          python scrapeFuturecast_Tweet.py
+          # python scrapeOffers_Tweet.py
         
       - name: commit files
         run: |
