@@ -1,9 +1,10 @@
-Key,PlayerInstitution,Institution,User,UpdatedOn,PredictionStatus,DaysCorrect,Premium,Score,Confidence,Scoop,Parent,IsZeroZone,DefaultName
-167770,259529,24099,929532,8/23/2022 7:12:25 AM,Undetermined,0,True,0,3,https://247sports.com/college/florida/Article/Florida-Gators-Football-recruiting-Top50-defender-in-the-class-of-2024-set-to-visit-UF-next-month--191948782/,,True,167770
-167709,273658,24099,5228463,8/14/2022 11:08:29 AM,Correct,0.0399421296296296,False,3.11003542052274E-05,6,,,True,167709
-167708,273658,24099,261364,8/14/2022 9:52:29 AM,Correct,0.0927199074074074,True,0.000670349468890892,8,,,False,167708
-167707,273658,24099,73,8/14/2022 7:57:58 AM,Correct,0.17224537037037,False,0.0052048719197222,6,,,False,167707
-167706,273658,24099,5292758,8/13/2022 9:20:29 PM,Correct,0.61494212962963,False,0.11783725060598,8,,,False,167706
-167705,273658,24099,929532,8/13/2022 9:19:42 PM,Correct,0.615486111111111,True,0.184446288159301,7,https://247sports.com/college/florida/Article/Florida-Gators-Football-recruiting-Top247-2024-LB-target-Myles-Graham-sets-decision-date--191413347/,,False,167705
-167234,272620,24099,261364,7/22/2022 1:07:01 PM,Undetermined,0,True,0,5,https://247sports.com/Article/Florida-football-recruiting-Gators-in-prime-position-to-keep-adding-to-top-25-ranked-recruiting-class-190411513/,,True,167234
-164733,263784,24099,2678206,4/25/2022 3:28:57 PM,Undetermined,0,True,0,4,,,True,164733
+Key,PlayerInstitution,Institution,User,UpdatedOn,PredictionStatus,DaysCorrect,Premium,Score,Confidence,Parent,IsZeroZone,DefaultName,Scoop
+168568,259953,24099,73,2022-12-06 07:28:12,Undetermined,0,True,0,6,,True,168568,
+167770,259529,24099,929532,2022-08-23 07:12:25,Undetermined,0,True,0,3,,True,167770,https://247sports.com/college/florida/Article/Florida-Gators-Football-recruiting-Top50-defender-in-the-class-of-2024-set-to-visit-UF-next-month--191948782/
+167709,273658,24099,5228463,2022-08-14 11:08:29,Correct,0.0399421296296296,False,3.11003542052274E-05,6,,True,167709,
+167708,273658,24099,261364,2022-08-14 09:52:29,Correct,0.0927199074074074,True,0.000670349468890892,8,,False,167708,
+167707,273658,24099,73,2022-08-14 07:57:58,Correct,0.17224537037037,False,0.0052048719197222,6,,False,167707,
+167706,273658,24099,5292758,2022-08-13 21:20:29,Correct,0.61494212962963,False,0.11783725060598,8,,False,167706,
+167705,273658,24099,929532,2022-08-13 21:19:42,Correct,0.615486111111111,True,0.184446288159301,7,,False,167705,https://247sports.com/college/florida/Article/Florida-Gators-Football-recruiting-Top247-2024-LB-target-Myles-Graham-sets-decision-date--191413347/
+167234,272620,24099,261364,2022-07-22 13:07:01,Undetermined,0,True,0,5,,True,167234,https://247sports.com/Article/Florida-football-recruiting-Gators-in-prime-position-to-keep-adding-to-top-25-ranked-recruiting-class-190411513/
+164733,263784,24099,2678206,2022-04-25 15:28:57,Undetermined,0,True,0,4,,True,164733,
