@@ -1,4 +1,5 @@
 Key,PlayerInstitution,Institution,User,UpdatedOn,PredictionStatus,DaysCorrect,Premium,Score,Confidence,Parent,IsZeroZone,DefaultName,Scoop
+168586,265827,24099,73,2022-12-07 05:13:51,Undetermined,0,True,0,6,,True,168586,
 168568,259953,24099,73,2022-12-06 07:28:12,Undetermined,0,True,0,6,,True,168568,
 168391,236091,24099,929532,2022-11-16 19:53:57,Undetermined,0,True,0,5,,True,168391,https://247sports.com/college/florida/Article/Florida-Gators-football-recruiting-new-247Sports-crystal-ball-prediction-logged-in-favor-of-UF--197804575/
 168186,282348,24099,5032388,2022-10-27 13:46:54,Incorrect,0,False,0,8,,True,168186,
@@ -48,4 +49,3 @@ Key,PlayerInstitution,Institution,User,UpdatedOn,PredictionStatus,DaysCorrect,Pr
 166920,267055,24099,73,2022-07-05 21:10:17,Correct,2.75188657407407,True,1.96289966295027,6,,False,166920,
 166901,275390,24099,798652,2022-07-05 10:18:12,Correct,23.3588888888889,False,66.5878566098452,6,,False,166901,https://247sports.com/college/penn-state/Article/Penn-State-Football-Recruiting-Targets-July-Jason-Moore-Tony-Rojas-Tamere-Robinson-Treyaun-Webb-Evan-Link-189676904/
 166896,275390,24099,929532,2022-07-04 19:11:19,Correct,23.9886689814815,True,87.8140076856547,7,,False,166896,https://247sports.com/college/florida/Article/Florida-Gators-football-recruiting-new-247Sports-Crystal-Ball-prediction-logged-in-favor-of-UF--189669106/
-166773,251745,24099,3825,2022-06-30 20:03:34,Correct,29.5780787037037,True,66.4414404318457,6,,False,166773,
