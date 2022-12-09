@@ -18,19 +18,18 @@ except KeyError:
 def updateFuturecast():
     # Read in old Futurecast
     dfFuturecast_old = pd.read_csv('data/futurecasts_old.csv')
-    oldFuturecast = list(dfFuturecast_old.text.unique()) # old Futurecast to list
+    oldFuturecast = list(dfFuturecast_old.check.unique()) # old Futurecast to list
     
     # Read new Futurecast
     dfFuturecast_new = getFuturecast()
-    newFuturecast = dfFuturecast_new[~dfFuturecast_new['text'].isin(oldFuturecast)]
+    newFuturecast = dfFuturecast_new[~dfFuturecast_new['check'].isin(oldFuturecast)]
   
     if len(newFuturecast)>0:
         dfFuturecast_new.to_csv('data/futurecasts_old.csv',index=False)
         newFuturecast.reset_index(inplace=True,drop=True)
         for i in range(0,len(newFuturecast)):
             try:
-                tweetFuturecast(newFuturecast.loc[i,'text'],
-                                newFuturecast.loc[i,'link'])
+                tweetFuturecast(newFuturecast.loc[i])
             except:
                 print('error reading new futurecast')
     else:
@@ -43,23 +42,34 @@ def getFuturecast():
     
     # Get forecasts
     forecast = soup.find_all("div", class_="ForecastActivity_forecastText__tdsTe")    
-     # create empty lists
-    text = []
-    link = []
-    # search for forecast text and append to list
-    for th in forecast:
-        text.append(th.text)
+    
+    # Get Forecast Text
+    dfFunc = pd.DataFrame()
+    for i in range(0,len(forecast)):
+        j = 0
+        for th in forecast[i]:
+            j = j+1    
+            # print(th.text)
+            dfFunc.loc[i,j]=th.text
+    dfFunc = dfFunc.drop(columns=[4,5,7,8,9])
+    dfFunc.rename(columns={1: "predictor", 2: "forecast",
+                       3: "recruit", 6:'properties',
+                       10: "destination"}, inplace=True)
+    dfFunc['check'] = dfFunc['predictor']+' '+dfFunc['recruit']+' '+dfFunc['destination']
+        
     # search for forecast links and append to list
+    link = []
     for a in forecast:
         for b in a.find_all('a', href=True, text=True):
             link.append(b['href'])
     link = [x for x in link if "prospects" in x] # filter out referers
-    # create dataframe
-    dfFunc = pd.DataFrame({'text': text,'link': link,})
+    dfFunc['link'] = link
     return(dfFunc)
 
 
-def tweetFuturecast(Text,Link):
+def tweetFuturecast(dfFunc):
+    Text = dfFunc['predictor']+' '+dfFunc['forecast']+' '+dfFunc['recruit']+' '+dfFunc['properties']+' '+dfFunc['destination']
+    Link = dfFunc['link']
     twitter_auth_keys = {
         "consumer_key"        : twitter_ck,
         "consumer_secret"     : twitter_cs,
@@ -83,5 +93,6 @@ def tweetFuturecast(Text,Link):
 
 if __name__ == "__main__":
     updateFuturecast()
+
 
 
